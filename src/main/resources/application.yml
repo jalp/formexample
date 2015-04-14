@@ -1,0 +1,21 @@
+spring:
+  config:
+    name: formexample
+
+server:
+  port: 8080
+
+multipart:
+  maxFileSize: 3Mb
+  maxRequestSize: 10Mb
+
+application:
+  path:
+    uploadedFiles: /tmp
+
+logging:
+  file: log/formexample.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    formexample.Application: 'DEBUG'

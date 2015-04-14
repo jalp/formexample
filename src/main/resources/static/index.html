@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <title>Container testing upload</title>
+</head>
+<body>
+<div>
+    <form method="post" enctype="multipart/form-data" action="/uploadFile">
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" id="subject"/>
+
+        <label for="body">Body</label>
+        <input type="text" name="body" id="body"/>
+
+        <label for="uploadFile">Upload file</label>
+        <input type="file" name="file" id="uploadFile"/>
+
+        <label for="uploadFile2">Upload file</label>
+        <input type="file" name="file" id="uploadFile2"/>
+
+        <input type="submit" value="Upload">
+    </form>
+</div>
+</body>
+</html>
