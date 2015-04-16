@@ -29,7 +29,7 @@ public class ApiController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
-        logger.info("Index information");
+        logger.info("Redirecting to index...");
         return "index.html";
     }
 
@@ -38,11 +38,15 @@ public class ApiController {
     @ResponseBody
     String upload(@RequestParam("file") MultipartFile[] file,
                   @RequestParam("subject") String subject,
-                  @RequestParam("body") String body) {
+                  @RequestParam("body") String body,
+                  @RequestParam("price") int price,
+                  @RequestParam("description") String description) {
 
         Container container = new Container();
         container.setBody(body);
         container.setSubject(subject);
+        container.setPrice(price);
+        container.setDescription(description);
 
         String directory = env.getProperty("application.path.uploadedFiles");
 
