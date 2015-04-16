@@ -4,6 +4,7 @@ import es.javi.formexample.domain.Container;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,14 +34,13 @@ public class ApiController {
         return "index.html";
     }
 
-    @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
-    public
+    @RequestMapping(value = "/uploadFile", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    String upload(@RequestParam("file") MultipartFile[] file,
-                  @RequestParam("subject") String subject,
-                  @RequestParam("body") String body,
-                  @RequestParam("price") int price,
-                  @RequestParam("description") String description) {
+    public String upload(@RequestParam("file") MultipartFile[] file,
+                         @RequestParam("subject") String subject,
+                         @RequestParam("body") String body,
+                         @RequestParam("price") int price,
+                         @RequestParam("description") String description) {
 
         Container container = new Container();
         container.setBody(body);

@@ -12,6 +12,7 @@ multipart:
 application:
   path:
     uploadedFiles: /tmp
+  debug: false
 
 logging:
   file: log/formexample.log
